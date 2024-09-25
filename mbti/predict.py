@@ -3,6 +3,7 @@ import numpy as np
 import re
 import pandas as pd
 import seaborn as sns
+import glob
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
@@ -15,12 +16,12 @@ from sklearn.metrics import confusion_matrix
 
 print("line test")
 
-file_path_csv = 'mbti/MBTI 500.csv'
+all_files = glob.glob("mbti/MBTI500_part_*.csv")
+data = pd.concat((pd.read_csv(f) for f in all_files), ignore_index=True)
 
-data = pd.read_csv(file_path_csv)
+# data = pd.read_csv(df)
 X = data['posts']
 y = data['type']
-chunk_size = 10000
 
 type_counts = {}
 
@@ -29,8 +30,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 def to_dense(X):
     return X.toarray()
 
-
-
 pipeSVC = Pipeline([
     ('tfidf', TfidfVectorizer(stop_words='english')), 
     ('svd', TruncatedSVD(n_components=100)),  
@@ -38,7 +37,7 @@ pipeSVC = Pipeline([
 ])
 
 pipeSVC.fit(X_train, y_train)
-print("Model training complete!")
+print("Model training complete")
 
 
 def predict_mbti(text):
@@ -47,7 +46,7 @@ def predict_mbti(text):
     
     return result[0]
 
-
+# test
 sample_text = "I enjoy spending time alone, reading books, and analyzing situations deeply."
 print("Making prediction...")
 mbti_type = predict_mbti(sample_text)
