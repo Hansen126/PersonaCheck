@@ -14,6 +14,7 @@ from sklearn.decomposition import TruncatedSVD
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.metrics import confusion_matrix
 
+# print test
 print("line test")
 
 all_files = glob.glob("mbti/MBTI500_part_*.csv")
