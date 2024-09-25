@@ -7,7 +7,7 @@ __pycache__/
 .eggs/
 *.log
 
-mbti/MBTI 500.csv
+"mbti/MBTI 500.csv"
 mbti/MBTI500.csv
 
 # Virtual environment
