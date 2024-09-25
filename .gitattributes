@@ -1,0 +1,2 @@
+mbti/MBTI[[:space:]]500.csv filter=lfs diff=lfs merge=lfs -text
+mbti/MBTI500.csv filter=lfs diff=lfs merge=lfs -text
