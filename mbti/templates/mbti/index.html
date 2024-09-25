@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PersonaCheck</title>
+</head>
+<body>
+    <h1>AI Personality Checker</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <textarea name="description" placeholder="Type your description here..."></textarea>
+        <button type="submit">Check Personality</button>
+    </form>
+</body>
+</html>

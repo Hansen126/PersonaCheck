@@ -6,6 +6,7 @@ from .predict import predict_mbti
 def index(request):
     if request.method == 'POST':
         description = request.POST.get('description')
-        result = predict_mbti(description)
-        return render(request, 'mbti/result.html', {'result': result})
+        if description:
+            predictedType = predict_mbti(description)
+            return render(request, 'mbti/result.html', {'result': predictedType})
     return render(request, 'mbti/index.html')

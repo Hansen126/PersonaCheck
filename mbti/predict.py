@@ -12,16 +12,14 @@ print("line test")
 all_files = glob.glob("mbti/MBTI500_part_*.csv")
 data = pd.concat((pd.read_csv(f) for f in all_files), ignore_index=True)
 
-# data = pd.read_csv(df)
 X = data['posts']
 y = data['type']
-
-type_counts = {}
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state= 42)
 
 def to_dense(X):
     return X.toarray()
+
 
 pipeSVC = Pipeline([
     ('tfidf', TfidfVectorizer(stop_words='english')), 
@@ -30,14 +28,14 @@ pipeSVC = Pipeline([
 ])
 
 pipeSVC.fit(X_train, y_train)
+
 print("Model training complete")
 
-
 def predict_mbti(text):
-    
+    print(f"Received text: {text}")
     result = pipeSVC.predict([text])
-    
-    return result[0]
+    print(f"Prediction result: {result}")
+    return result[0]    
 
 # test
 sample_text = "I enjoy spending time alone, reading books, and analyzing situations deeply."
