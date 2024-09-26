@@ -21,7 +21,7 @@ This project leverages the **LinearSVC** model (Support Vector Classifier) with 
 
 ## ⚙️ Technologies Used
 
-- **Backend**: [Django](https://www.djangoproject.com/) (Python Web Framework)
+- **Backend**: [Django](https://www.djangoproject.com/) (Python Web Framework), JavaScript
 - **Machine Learning**: [scikit-learn](https://scikit-learn.org/) (TF-IDF Vectorizer, LinearSVC)
 - **Frontend**: HTML, CSS
 - **Database**: Not required (no persistent data storage)
