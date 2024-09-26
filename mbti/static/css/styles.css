@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom right, #d8e2f3, #ffffff);
+    background: linear-gradient(to bottom, #ffffff, #8dbeff);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -18,12 +18,12 @@ body {
 /* Navbar */
 .navbar {
     width: 100%;
-    padding: 15px 30px;
-    background: linear-gradient(to bottom, #d8e2f3, transparent); /* Light blue fading to transparent */
+    padding: 50px 30px;
+    background: linear-gradient(to bottom, #7faeff, transparent);
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for definition */
+    
 }
 
 .navbar-logo {
@@ -32,33 +32,69 @@ body {
 }
 
 .navbar-logo img {
-    width: 50px;
+    width: 75px;
     height: auto;
     margin-right: 10px;
+    margin-left: 20px;
+    margin-top: 0px;
 }
 
 .navbar-logo span {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     color: #2c3e50;
 }
 
-/* Main Content */
 .main-container {
-    flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 50px;
+    margin-top: -28px;
+    height: calc(100vh - 137px);
+}
+.left-section {
+    width: 52%;
+    padding: 130px;
+    padding-top: 15px;
+    margin-top: -75px;
 }
 
-.container {
+.left-section h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.left-section p {
+    font-size: 29px;
+    color: #2c3e50;
+}
+
+.right-section {
+    width: 50%;
+}
+
+.containerIndex {
     text-align: center;
     padding: 48px;
     background-color: white;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 75px;
     width: 750px;
+    margin-top: -75px;
+}
+
+.containerResult {
+    text-align: center;
+    padding: 48px;
+    background-color: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 75px;
+    width: 750px;
+    margin-left: 530px;
+    margin-top: -150px;
 }
 
 h1 {
@@ -85,11 +121,12 @@ textarea:focus {
 }
 
 button {
-    background-color: #3498db;
-    color: white;
+    background-color: #7dbaff;
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 8px;
     padding: 12px;
+    font-family: 'Arial', sans-serif;
     font-size: 16px;
     cursor: pointer;
     margin-top: 20px;
@@ -106,8 +143,8 @@ button:hover {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #2c3e50;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     padding: 15px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

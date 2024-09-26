@@ -17,13 +17,21 @@
     </nav>
 
     <div class="main-container">
-        <div class="container">
-            <h1>AI Personality Checker</h1>
-            <form method="POST">
-                {% csrf_token %}
-                <textarea name="description" placeholder="Type your description here... (Minimum 20 Words)" id="description"></textarea>
-                <button type="submit" id="submitBtn">Check Personality</button>
-            </form>
+
+        <div class="left-section">
+            <h1>AI Personality Checker based on a text</h1>
+            <p>Check a person’s MBTI personality from just a description about them</p>
+        </div>
+
+        <div class="right-section">
+            <div class="containerIndex">
+                <h1>MBTI Personality Checker</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    <textarea name="description" placeholder="Type your description here... (Minimum 20 Words)" id="description"></textarea>
+                    <button type="submit" id="submitBtn">Check Personality</button>
+                </form>
+            </div>
         </div>
     </div>
 
