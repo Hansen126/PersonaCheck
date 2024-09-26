@@ -1,14 +1,37 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PersonaCheck</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <h1>AI Personality Checker</h1>
-    <form method="POST">
-        {% csrf_token %}
-        <textarea name="description" placeholder="Type your description here..."></textarea>
-        <button type="submit">Check Personality</button>
-    </form>
+
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="{% static 'assets/personlogowobg.png' %}" alt="PersonaCheck Logo">
+            <span>PersonaCheck</span>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="container">
+            <h1>AI Personality Checker</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <textarea name="description" placeholder="Type your description here... (Minimum 20 Words)" id="description"></textarea>
+                <button type="submit" id="submitBtn">Check Personality</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="notification">
+        Please enter at least 20 words to proceed.
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
 </body>
 </html>

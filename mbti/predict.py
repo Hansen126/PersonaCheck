@@ -42,3 +42,4 @@ sample_text = "I enjoy spending time alone, reading books, and analyzing situati
 print("Making prediction...")
 mbti_type = predict_mbti(sample_text)
 print(f"The predicted MBTI type is: {mbti_type}")
+
